@@ -1,0 +1,25 @@
+<div>
+  <img src="http://placehold.it/820x230" alt="">
+  <div>
+    <h4 class="float-right">{{product.price}}元</h4>
+    <h4>{{product.title}}</h4>
+    <p>{{product.desc}}</p>
+    <div>
+      <!-- <p class="float-right">{{comments.length}}</p> -->
+      <p>
+        <app-stars [rating]='product.rating'></app-stars>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let comment of comments">
+    <div class="d-flex justify-content-between">
+      <h5 class="mb-1">{{comment.user}}</h5>
+      <small>{{comment.timestamp}}</small>
+    </div>
+    <p class="float-right"><app-stars [rating]='comment.rating'></app-stars></p>
+    <p>{{comment.content}}</p>
+  </a>
+</div>
